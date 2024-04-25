@@ -1,5 +1,5 @@
-@extends('layout.master')
+@extends('layouts.master')
 
-@section('pwl')
-    <h1>judulnya adalah{{$judul}}</h1>
+@section('container')
+    <h1>{{$isi_data}}</h1>
 @endsection

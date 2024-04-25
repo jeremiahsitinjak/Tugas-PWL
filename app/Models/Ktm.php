@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ktm extends Model
 {
     use HasFactory;
+    
     protected $table ='ktm';
     protected $primarKey = 'id_ktm';
 

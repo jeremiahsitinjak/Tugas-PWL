@@ -1,8 +1,9 @@
 <?php
 
 // use Illuminate\Support\Facades\Route; (UNNECESSARY)
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahasiswaController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,31 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome',[
-//         'isi_data' => 'Halaman Awal',
-//     ]);
-// });
-Route::get('/',[PagesController::class,'index']);
-
-Route::get('/aboutme', function () {
-    return view('aboutme',[
-        "judul" => "About Me",
-        "nama" => "Jeremia Hasudungan Sitinjak",
-        "nim" => "231402010"
+Route::get('/', function () {
+    return view('welcome',[
+        'isi_data' => 'Halaman Awal',
     ]);
 });
 
-Route::get('/dosen', function () {
-    return view('dosen',[
-        "judul" => "Dosen Favorite",
-        "dosen" => "Pak Opim"
-    ]);
-});
-
-Route::get('/wisata', function () {
-    return view('wisata',[
-        "judul" => "Wisata",
-        "wisata" => "-"
-    ]);
-});
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('/dosen', [DosenController::class, 'index']);
